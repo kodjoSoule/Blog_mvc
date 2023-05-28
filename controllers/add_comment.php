@@ -1,5 +1,5 @@
 <?php
-    require_once('./model/model.php');
+    require_once('./model/postModel.php');
     function addComment(string $post, array $input){
         $author =null;
         $comment = null ;

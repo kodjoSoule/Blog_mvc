@@ -1,7 +1,7 @@
 <?php
 // controllers/homepage.php
 
-require_once('./model/model.php');
+require_once('./model/postModel.php');
 
 function homepage() {
 	$posts = getPosts();

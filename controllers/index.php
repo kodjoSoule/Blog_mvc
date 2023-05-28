@@ -1,5 +1,5 @@
 <?php 
-   require_once("./model/model.php");
+   require_once("./model/postModel.php");
    $posts = getPosts();
    
    require("./front/homepage.php") ;

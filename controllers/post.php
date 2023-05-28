@@ -1,8 +1,8 @@
 <?php
 // post.php
 
-require_once('./model/model.php');
-require_once('./model/comment.php');
+require_once('./model/postModel.php');
+require_once('./model/commentModel.php');
 
 function post(String $identifier)
 {
