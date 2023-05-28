@@ -1,6 +1,9 @@
 <?php 
    require_once("./model/postModel.php");
-   $posts = getPosts();
+   $postModel = new PostModel();
+   $postModel->database = new DatabaseConnection();
+    $posts = $postModel->getPosts();
+   
    
    require("./front/homepage.php") ;
 ?>
