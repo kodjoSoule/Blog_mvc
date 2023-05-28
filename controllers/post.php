@@ -9,5 +9,5 @@ function post(String $identifier)
     $post = getPost($identifier);
     $comments = getComments($identifier);
     
-    require('view/post.php');
+    require_once('view/post.php');
 }

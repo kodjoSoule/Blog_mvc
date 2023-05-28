@@ -50,22 +50,3 @@ function getPost($_id)
     return $post;
 }
 
-// function getComments($id)
-// {
-//     $database = dbConnect() ;
-//     $statement = $database->prepare("SELECT id, author, comment, DATE_FORMAT(comment_date, '%d/%m%Y a %Hh%imin%ss') as french_creation_date from comments WHERE post_id = ? ORDER BY comment_date DESC");
-//     $statement->execute([$id]);
-//     $comments = [];
-//     while ($row = $statement->fetch()) {
-//         $comment = [
-//             'author' => $row['author'],
-//             'comment' => $row['comment'],
-//             'french_creation_date' => $row['french_creation_date'],
-//         ];
-//         $comments[] =$comment ;
-//     }
-//     $statement->closeCursor();
-//     $database = null;
-//     return $comments;
-// }
-//add_comment

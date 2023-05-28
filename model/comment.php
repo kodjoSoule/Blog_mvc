@@ -1,7 +1,47 @@
 <?php
 // src/model/comment.php
 
-function getComments(string $post)
+class Comment
+{
+    private String $author;
+     private String $content;
+    private string $french_creation_date;
+    
+    //constructors
+    public function __construct()
+    {
+    }
+    //getteurs
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+    public function getContent()
+    {
+        return $this->content;
+    }
+    public function getFrenchCreationDate()
+    {
+        return $this->french_creation_date;
+    }
+    //setters
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+    public function setFrenchCreationDate($french_creation_date)
+    {
+        $this->french_creation_date = $french_creation_date;
+    }
+    
+}
+$comment = new Comment();
+
+function getComments(string $post) : array
 {
     $database = commentDbConnect();
     $statement = $database->prepare(
@@ -11,12 +51,12 @@ function getComments(string $post)
 
     $comments = [];
     while (($row = $statement->fetch())) {
-        $comment = [
-            'author' => $row['author'],
-            'french_creation_date' => $row['french_creation_date'],
-            'comment' => $row['comment'],
-        ];
-
+        //create comment object
+        $comment = new comment();
+        //add data to the object
+        $comment->setAuthor($row['author']);
+        $comment->setContent($row['comment']);
+        $comment->setFrenchCreationDate($row['french_creation_date']);
         $comments[] = $comment;
     }
 
